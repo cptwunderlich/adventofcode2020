@@ -51,10 +51,12 @@ countMatches matches pws
 part1 = countMatches matchesPolicy1
 
 
+-- Count lines where either pos1 OR pos2 is equal to given char
 part2 = countMatches (\(PassP p1 p2 ch pw)
     -> (pw!!(p1 - 1) == ch) /= (pw!!(p2 - 1) == ch))
 
 
+-- For part1: `ch` must occur between `min` and `max` times in `pw`
 matchesPolicy1 :: PassPolicy -> Bool
 matchesPolicy1 (PassP min max ch pw)
  = cnt >= min && cnt <= max

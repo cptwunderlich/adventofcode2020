@@ -23,6 +23,10 @@ year :: Int
 year = 2020
 
 
+-- Iterating over input, with current element x,
+-- let y = 2020 - x and then check whether y exists in the input set.
+-- That should be in O(n) (Construct set n*k, iterate n, check k, where
+-- k is a constant and therefore in O(1))
 part1 :: [Int] -> Int
 part1 nums
  = let
@@ -38,6 +42,8 @@ part1 nums
    in a * b
 
 
+-- Just brute force, but surprisingly fast. Maybe Haskell magic?
+-- Or my new Ryzen 4700U CPU ^^
 part2 :: [Int] -> Int
 part2 nums
  = let
