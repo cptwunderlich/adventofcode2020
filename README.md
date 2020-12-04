@@ -46,6 +46,21 @@ arithmetic. But also for a more "functional" approach, I though of `cycle`.
 I always for get about `sum` and `product`. I went back to change that in
 part 2, where I had a `foldl' (*) 1 fxs`, but I didn't change it for part 1.
 A very pretty and terse solution reminded me of these functions.
+(actually, it might be better to forget sum/product, according to a
+[blog post by Michael Snoyman](https://www.snoyman.com/blog/2020/10/haskell-bad-parts-1).)
 
 A more efficient solution would probably use `Data.Vector` and modular arithmetic.
 I think Haskell's TypeClasses could shine for the latter, [like in this post](https://byorgey.wordpress.com/2020/02/15/competitive-programming-in-haskell-modular-arithmetic-part-1/).
+
+## Day 4
+
+A parsing and data validation task.
+I think that would have been even easier with RegEx, but I actually haven't taken
+the time yet to get and learn a regex library for Haskell.
+That's why I stuck with parsec. The first part was done quickly, for the second
+one I refactored a bit to make it "nicer".
+But then it struck me - I had a bug and it took me forever to find it...
+My solution counted one match too many - one parser matched the input, but didn't
+consume all of it. I cheated and used another solution to find the culprit.
+Parser combinators are deceptively simple... <* EOF
+
