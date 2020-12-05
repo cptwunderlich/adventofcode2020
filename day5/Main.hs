@@ -22,50 +22,34 @@ https://adventofcode.com/2020/day/5
 
 -}
 
-data Interval = Iv Int Int
+chrToBit :: Char -> Int
+chrToBit = \case
+        'F' -> 0
+        'L' -> 0
+        'B' -> 1
+        'R' -> 1
 
-instance Show Interval where
-    show (Iv l u) = "From " ++ show l ++ " to " ++ show u
+bstrToDec :: [Int] -> Int
+bstrToDec s = foldl' (\n (p, b) -> n + (2^p * b)) 0 $ zip [0..] $ reverse s
 
-ivMin :: Interval -> Int
-ivMin (Iv m _) = m
 
-uRow :: Int
-uRow = 127
+seatIds :: [String] -> [Int]
+seatIds ss = [row * 8 + col | bs <- map (map chrToBit) ss
+                        , let row = bstrToDec $ take 7 bs
+                        , let col = bstrToDec $ drop 7 bs]
 
-uCol :: Int
-uCol = 7
 
-halfIv :: Interval -> (Interval, Interval)
-halfIv (Iv l u) = (Iv l (l + h), Iv (u - h) u)
+part2 :: [Int] -> Int
+part2 sids = findMissing $ zip sorted $ tail sorted
  where
-     diff = u - l
-     h = diff `div` 2
+         sorted         = sort sids
+         findMissing p  = foldl' (\m (x, y) -> if y - x == 2 then x+1 else m) 0 p
 
-txInput :: String -> [(a, a) -> a]
-txInput = map (\case
-                'F' -> fst
-                'B' -> snd
-                'L' -> fst
-                'R' -> snd)
-
-seatId :: String -> Int
-seatId s = ivMin (finalIv uRow $ fst parts) * 8 + ivMin (finalIv uCol $ snd parts)
- where
-     parts      = splitAt 7 s
-     finalIv u s  = foldl' (\i f -> f $ halfIv i) (Iv 0 u) $ txInput s
-
-part1 :: [String] -> Int
-part1 = maximum . map seatId
-
-part2 :: [String] -> Int
-part2 s = findMissing $ zip sids (tail sids)
- where
-     sids           = sort $ map seatId s
-     findMissing p  = foldl' (\m (x, y) -> if y - x == 2 then x+1 else m) 0 p
 
 main :: IO ()
 main = interact go
  where
-     go inp = "Part 1: " ++ show (part1 $ lines inp)
-            ++ "\nPart 2: " ++ show (part2 $ lines inp) ++ "\n"
+         sids    = seatIds . lines
+         part1 s = maximum $ sids s
+         go inp  = "Part 1: " ++ show (part1 inp)
+                ++ "\nPart 2: " ++ show (part2 $ sids inp) ++ "\n"
