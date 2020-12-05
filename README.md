@@ -73,3 +73,6 @@ The input can than directly be mapped to `fst` and `snd`.
 The second part was even easier. We are simply looking for two numbers x and y
 where `y - x = 2` and the result is `x + 1`.
 
+Edit: After looking at the solutions, I'm kind of upset. You can look at the
+problem as a binary string and then it can be solved in about three lines...
+
