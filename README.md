@@ -64,3 +64,12 @@ My solution counted one match too many - one parser matched the input, but didn'
 consume all of it. I cheated and used another solution to find the culprit.
 Parser combinators are deceptively simple... <* EOF
 
+## Day 5
+
+Went very well. For the first part, I created an interval type and a function
+that would halve an interval, returning a pair of the halves.
+The input can than directly be mapped to `fst` and `snd`.
+
+The second part was even easier. We are simply looking for two numbers x and y
+where `y - x = 2` and the result is `x + 1`.
+
