@@ -83,4 +83,10 @@ Note that I have seen a solution for `bstrToDec` like this:
 But the above blog post says to avoid `foldr` for functions which are not lazy
 in their second argument, like `(*)`.
 
+## Day 6
 
+My first instinct was to throw every group into a set. But I figured, I could
+solve that with some text/list manipulation, i.e., `length . group . sort`.
+That worked and was short and sweet, but sure enough, the second part required
+a Set. So now my solution contains both approaches, but I don't want to rewrite
+part 1.
