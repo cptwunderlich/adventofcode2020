@@ -29,14 +29,13 @@ chrToBit = \case
         'B' -> 1
         'R' -> 1
 
+
 bstrToDec :: [Int] -> Int
-bstrToDec s = foldl' (\n (p, b) -> n + (2^p * b)) 0 $ zip [0..] $ reverse s
+bstrToDec = foldr1 (\b d -> b + 2 * d) . reverse
 
 
 seatIds :: [String] -> [Int]
-seatIds ss = [row * 8 + col | bs <- map (map chrToBit) ss
-                        , let row = bstrToDec $ take 7 bs
-                        , let col = bstrToDec $ drop 7 bs]
+seatIds = map (bstrToDec . map chrToBit)
 
 
 part2 :: [Int] -> Int
@@ -50,6 +49,5 @@ main :: IO ()
 main = interact go
  where
          sids    = seatIds . lines
-         part1 s = maximum $ sids s
-         go inp  = "Part 1: " ++ show (part1 inp)
+         go inp  = "Part 1: " ++ show (maximum $ sids inp)
                 ++ "\nPart 2: " ++ show (part2 $ sids inp) ++ "\n"
