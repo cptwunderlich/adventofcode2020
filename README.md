@@ -90,3 +90,9 @@ solve that with some text/list manipulation, i.e., `length . group . sort`.
 That worked and was short and sweet, but sure enough, the second part required
 a Set. So now my solution contains both approaches, but I don't want to rewrite
 part 1.
+
+## Day 7
+
+I hated the parsing. This was 90% parsing. Debugging parsec is no fun.
+But yeah, there it is.
+
