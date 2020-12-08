@@ -3,6 +3,19 @@ module Main where
 import qualified Data.IntSet as S
 import Data.Maybe (fromMaybe)
 
+{-
+
+Author: Benjamin M.
+https://github.com/cptwunderlich
+
+Part1: Find value of accumulator before loop in program.
+
+Part2: Fix corrupted instruction and return accumulator at program termination.
+
+https://adventofcode.com/2020/day/8
+
+-}
+
 data Instruction = Nop Int
                  | Acc Int
                  | Jmp Int
