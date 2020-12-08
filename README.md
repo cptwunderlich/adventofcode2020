@@ -96,3 +96,13 @@ part 1.
 I hated the parsing. This was 90% parsing. Debugging parsec is no fun.
 But yeah, there it is.
 
+## Day 8
+
+Was pretty straight forward. I guess I could make the solution more succinct
+and beautiful, but I won't bother. E.g., reusing more machinery between
+part1 and part2. We'll see whether this is like last year and this instruction
+set will get reused.
+
+I would have expected part2 to be slower, since I'm basically doing a brute-
+force approach. I added the loop detection from part1 for quicker termination
+from the get go and it is very fast.
