@@ -106,3 +106,13 @@ set will get reused.
 I would have expected part2 to be slower, since I'm basically doing a brute-
 force approach. I added the loop detection from part1 for quicker termination
 from the get go and it is very fast.
+
+## Day 9
+
+Found this one pretty OK as well, although I'm sure that a prettier/more terse
+version would be possible.
+I wasted so much time on part 2, bc. I didn't read the docs of the function
+`subsequences` from Data.List propertly. That lead the code being too slow
+to find a solution and I was scratching my head trying all sorts of things...
+Once I figured that out, I replaced it in 5 mins.
+
