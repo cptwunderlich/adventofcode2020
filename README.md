@@ -116,3 +116,11 @@ I wasted so much time on part 2, bc. I didn't read the docs of the function
 to find a solution and I was scratching my head trying all sorts of things...
 Once I figured that out, I replaced it in 5 mins.
 
+Variation of the [subset sum problem](https://en.wikipedia.org/wiki/Subset_sum_problem).
+
+## Day 10
+
+Part 1 was easy, but I had my difficulties with part 2. It was late so
+I postponed it to day 11 and I have to admit, I did look at the solutions thread.
+That's how I found out that I need to look at the Tribonacci series.
+
