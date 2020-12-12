@@ -129,3 +129,13 @@ That's how I found out that I need to look at the Tribonacci series.
 This was generally fun, except that I had a bug in `inView` that took me a while.
 My first attempt to fix it failed: Note to self: `scanl` on infinite lists with
 an eager function doesn't work...
+
+## Day 12
+
+Pretty straight forward, I just had to refreshen my geometry skills a little bit...
+
+So, the "trick" to the puzzle is, that all rotations are multiple of 90°. That would
+make everything easier, but since I am used to striving for general solutions,
+it didn't even cross my mind. So I had to muck around with vector rotation etc...
+Apparently there is a simple solution using immaginary nubmers.
+
