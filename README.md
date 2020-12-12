@@ -124,3 +124,8 @@ Part 1 was easy, but I had my difficulties with part 2. It was late so
 I postponed it to day 11 and I have to admit, I did look at the solutions thread.
 That's how I found out that I need to look at the Tribonacci series.
 
+## Day 11
+
+This was generally fun, except that I had a bug in `inView` that took me a while.
+My first attempt to fix it failed: Note to self: `scanl` on infinite lists with
+an eager function doesn't work...
