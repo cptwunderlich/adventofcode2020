@@ -139,3 +139,10 @@ make everything easier, but since I am used to striving for general solutions,
 it didn't even cross my mind. So I had to muck around with vector rotation etc...
 Apparently there is a simple solution using immaginary nubmers.
 
+## Day 13
+
+How did I not know `Data.Function.on`?? I've been looking for something like that for
+a while! I should also take a closer look at the Bifunctor package.
+
+I did look at explanations of the chinese remainder theorem and used
+https://rosettacode.org/wiki/Chinese_remainder_theorem

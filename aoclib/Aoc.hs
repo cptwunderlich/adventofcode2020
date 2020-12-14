@@ -6,7 +6,8 @@ module Aoc (
     vmul,
     countBy,
     window,
-    window'
+    window',
+    splitOn
 ) where
 
 import Data.List (inits, tails, foldl')
@@ -52,3 +53,9 @@ window n xs
 -- | Create slinding windows over list, but cut away boundary windows smaller than n.
 window' :: Int -> [a] -> [[a]]
 window' n xs = [w | ts <- tails xs, let w = take n ts, length w == n]
+
+splitOn :: (Char -> Bool) -> String -> [String]
+splitOn p s = case dropWhile p s of
+                    "" -> []
+                    s' -> w : splitOn p s''
+                         where (w, s'') = break p s'
